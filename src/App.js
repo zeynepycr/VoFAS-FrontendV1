@@ -23,7 +23,7 @@ const AudioFeedback = () => {
       };
 
       recorder.onstop = () => {
-        const audioBlob = new Blob(audioChunks, { type: "audio/wav" });
+        const audioBlob = new Blob(audioChunks, { type: "audio/mp3" });
         setAudioBlob(audioBlob);
         setRecordingCompleted(true);
       };
@@ -51,7 +51,7 @@ const AudioFeedback = () => {
 
     //ses dosyasının kaydedilme formatını ayarlar
     const formData = new FormData();
-    formData.append("audio", audioBlob, "feedback.wav");
+    formData.append("audio", audioBlob, "feedback.mp3");
 
     //kaydedilen sesi backend api'ına gönderir
     try {
